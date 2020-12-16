@@ -26,10 +26,10 @@ function App() {
       <h1>Tip Calculator</h1>
 
       <p>How much did the bill give?</p>
-      <Input placeholder="Digite aqui" type="number" value={valueCheck} onChange={checkInput}/>
+      <Input placeholder="Type here" type="number" value={valueCheck} onChange={checkInput}/>
 
       <p>What is the percentage of the tip?</p>
-      <Input placeholder="Digite aqui" type="number" value={valueTip} onChange={tipInput}/>
+      <Input placeholder="Type here" type="number" value={valueTip} onChange={tipInput}/>
       {
         valueCheck > 0 &&
         <>

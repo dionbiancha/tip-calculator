@@ -34,8 +34,10 @@ function App() {
         valueCheck > 0 &&
         <>
           <p>Sub Total: R$ {valueCheck}</p>
-          <p>Tip:</p>
-          <p>Total:</p>
+          { valueTip > 0 &&
+            <p>Tip ({valueTip}%): R$ {valueCheck/100 * valueTip}</p>
+          }
+          <h3>Total: R$ {parseInt(valueCheck) + parseInt((valueTip/100) * valueCheck)}</h3>
         </>
       }
     </div>

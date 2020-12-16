@@ -12,13 +12,13 @@ function App() {
   const [ valueCheck, setValueCheck] = useState('');
 
   const checkInput = (e) => {
-    setValueCheck(e.target.valueCheck);
+    setValueCheck(e.target.value);
   };
 
   const [ valueTip, setValueTip] = useState('');
 
   const tipInput = (e) => {
-    setValueTip(e.target.valueTip);
+    setValueTip(e.target.value);
   };
 
   return (
@@ -26,14 +26,18 @@ function App() {
       <h1>Tip Calculator</h1>
 
       <p>How much did the bill give?</p>
-      <Input placeholder="Digite aqui" type="text" value={valueCheck} onChange={checkInput}/>
+      <Input placeholder="Digite aqui" type="number" value={valueCheck} onChange={checkInput}/>
 
       <p>What is the percentage of the tip?</p>
-      <Input placeholder="Digite aqui" type="text" value={valueTip} onChange={tipInput}/>
-
-      <p>Sub Total: </p>
-      <p>Tip:</p>
-      <p>Total:</p>
+      <Input placeholder="Digite aqui" type="number" value={valueTip} onChange={tipInput}/>
+      {
+        valueCheck > 0 &&
+        <>
+          <p>Sub Total: R$ {valueCheck}</p>
+          <p>Tip:</p>
+          <p>Total:</p>
+        </>
+      }
     </div>
   );
 }
